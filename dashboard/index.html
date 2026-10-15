@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Invernadero IoT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Iconos de Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-6">
+    <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center border border-slate-100">
+        
+        <div class="flex justify-center mb-4">
+            <div id="icon-container" class="p-3 bg-blue-100 rounded-full text-blue-600 transition-colors duration-300">
+                <i data-lucide="sun-dim" class="w-8 h-8"></i>
+            </div>
+        </div>
+
+        <h1 class="text-2xl font-bold text-slate-800 mb-1">Invernadero Alpha</h1>
+        <p class="text-slate-400 mb-8 text-xs font-mono">Topico: iot/invernadero/iluminacion</p>
+        
+        <div class="mb-6 relative">
+            <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Nivel de Iluminación</h2>
+            <div class="flex justify-center items-end gap-1 mb-4">
+                <span id="valor-lux" class="text-7xl font-black text-slate-700 tabular-nums tracking-tighter transition-colors duration-300">--</span>
+                <span class="text-xl text-slate-400 font-medium mb-2">lux</span>
+            </div>
+
+            <!-- Barra de progreso visual -->
+            <div class="w-full bg-slate-100 rounded-full h-2.5 mb-2 overflow-hidden">
+                <div id="barra-lux" class="bg-blue-500 h-2.5 rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-slate-400 font-bold">
+                <span>0 lx (Oscuro)</span>
+                <span>1250 lx (Máx)</span>
+            </div>
+        </div>
+
+        <!-- Alerta Crítica -->
+        <div id="alerta-box" class="hidden bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded-r-lg text-left mt-6 transition-all duration-300 transform translate-y-0 opacity-100">
+            <div class="flex items-center">
+                <i data-lucide="alert-triangle" class="w-5 h-5 mr-2"></i>
+                <strong class="font-bold text-sm">¡Alerta Lumínica!</strong>
+            </div>
+            <p class="text-xs mt-1 text-red-600">La iluminación ha superado el umbral seguro de 1000 lux. Posible estrés en los cultivos.</p>
+        </div>
+        
+        <div class="mt-8 pt-4 border-t border-slate-50 flex items-center justify-center text-xs text-slate-400">
+            <i data-lucide="clock" class="w-3 h-3 mr-1"></i>
+            Actualizado: <span id="timestamp" class="ml-1 font-medium">Esperando conexión...</span>
+        </div>
+    </div>
+
+    <!-- Librerías -->
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: broker_mqtt
+    ports:
+      - "1883:1883" # Puerto MQTT estándar
+      - "9001:9001" # Puerto WebSockets para el Dashboard HTML
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
