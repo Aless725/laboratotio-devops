@@ -1,6 +1,4 @@
-Aquí tienes el archivo `README.md` completo y estructurado en Markdown, listo para que lo copies y lo subas a tu repositorio de GitHub.
 
-```markdown
 # Laboratorio 01 DevOps - Monitorización IoT de Invernadero 🌱
 
 Este repositorio contiene la solución a la evaluación práctica del **Laboratorio 01 de DevOps**. Consiste en un prototipo IoT contenerizado diseñado para monitorizar la intensidad de iluminación dentro de un invernadero. 
@@ -40,7 +38,6 @@ laboratorio-devops/
     └── js/
         └── app.js           # Lógica de suscripción MQTT y reglas de alerta
 
-```
 
 ## 🚀 Instrucciones de Ejecución
 
@@ -50,10 +47,10 @@ Para ejecutar este proyecto en tu máquina local, sigue estos pasos en paralelo:
 
 Asegúrate de tener Docker Desktop ejecutándose. Abre una terminal en la raíz del proyecto y ejecuta:
 
-```bash
+bash
 docker compose up -d
 
-```
+
 
 *Esto iniciará Mosquitto en los puertos `1883` (MQTT) y `9001` (WebSockets).*
 
